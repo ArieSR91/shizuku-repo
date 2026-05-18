@@ -1,5 +1,5 @@
 #!/data/local/tmp/shizuku/bin/bash
 
 chmod 755 /data/local/tmp/shizuku/bin/proot
-chmod 755 /data/local/tmp/shizuku/lib/libtalloc.so
 chmod 755 /data/local/tmp/shizuku/libexec/proot/loader
+chmod 755 /data/local/tmp/shizuku/libexec/proot/loader32
