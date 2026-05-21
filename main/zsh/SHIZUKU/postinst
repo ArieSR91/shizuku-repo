@@ -1,0 +1,4 @@
+#!/data/local/tmp/shizuku/bin/bash
+
+chmod 755 /data/local/tmp/shizuku/bin/zsh
+chmod 755 /data/local/tmp/shizuku/etc/zsh -R
