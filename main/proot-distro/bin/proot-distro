@@ -2,32 +2,6 @@
 # shellcheck disable=SC2239
 ##
 
-#realpath
-#awk
-#basename
-#bzip2
-#cat
-#chmod
-#cp
-#curl
-#cut
-#du
-#file
-#find
-#grep
-#gzip
-#head
-#id
-#lscpu
-#mkdir
-#proot
-#rm
-#sed
-#tar
-#unzip
-#xargs
-#xz#
-
 ## Proot-Distro is a script for managing proot containers on Termux.
 ##
 ## !!!        THIS IS NOT A REPLACEMENT FOR PROOT UTILITY        !!!
@@ -90,7 +64,7 @@ DEFAULT_PATH_ENV="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 # old devices that are not compatible with up-to-date versions of GNU libc.
 DEFAULT_FAKE_KERNEL_RELEASE="6.17.0-Arie-SR91"
 DEFAULT_FAKE_KERNEL_VERSION="#1 SMP PREEMPT_DYNAMIC Fri, 10 Oct 2025 00:00:00 +0000"
-
+DEFAULT_FAKE_HOSTNAME="linux"
 # Emulator type for x86_64 systems.
 # Can be either BLINK or QEMU.
 : "${PROOT_DISTRO_X64_EMULATOR:=QEMU}"
@@ -624,7 +598,7 @@ command_install() {
 			chmod u+rw "${INSTALLED_ROOTFS_DIR}/${distro_name}/etc/hosts" >/dev/null 2>&1 || true
 			cat <<- EOF > "${INSTALLED_ROOTFS_DIR}/${distro_name}/etc/hosts"
 			# IPv4.
-			127.0.0.1   localhost.localdomain localhost
+			127.0.0.1   localhost.localdomain localhost linux
 
 			# IPv6.
 			::1         localhost.localdomain localhost ip6-localhost ip6-loopback
@@ -1583,7 +1557,7 @@ command_login() {
 	local -a login_env_vars
 	login_env_vars=("PATH=${DEFAULT_PATH_ENV}")
 	local kernel_release="${DEFAULT_FAKE_KERNEL_RELEASE}"
-	local hostname="localhost"
+	local hostname="${DEFAULT_FAKE_HOSTNAME}"
 	local distro_name
 
 	while (($# >= 1)); do
