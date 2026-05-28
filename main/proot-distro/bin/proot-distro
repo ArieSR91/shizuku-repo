@@ -1,7 +1,6 @@
 #!/data/local/tmp/shizuku/bin/bash
 # shellcheck disable=SC2239
 ##
-
 ## Proot-Distro is a script for managing proot containers on Termux.
 ##
 ## !!!        THIS IS NOT A REPLACEMENT FOR PROOT UTILITY        !!!
