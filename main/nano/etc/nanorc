@@ -1,1 +1,2 @@
-include "/data/data/com.termux/files/usr/share/nano/*nanorc"
+include "/data/local/tmp/shizuku/share/nano/*nanorc"
+include "/data/local/tmp/shizuku/share/nano/extra/*nanorc"
